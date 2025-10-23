@@ -1,0 +1,202 @@
+
+@layout.app({title: Homepage}) 
+    
+@slot('homeheader')
+    <section class="header">
+    <div class="container">
+        <div class="navbar" id="navbar">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="AquaRim Logo" width="150px" ></a>
+            </div>
+            <nav>
+                <ul id="menuitems">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    <li><a href="/gate">Account</a></li>
+                </ul>
+            </nav>
+            <a href="/cart"><img src="/images/cart.png" alt="cart" width="30px" height="30px"></a>
+            <img src="/images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Find Your Perfect <br> Fish Friend!</h1>
+                <p>Every tank deserves a little life, a little color, a quiet companion. <br> Somewhere in here... the one meant for you is already waiting.</p>
+                <a href="/products" class="btn">Swim In &#8594;</a>
+            </div>
+            <div class="col-2">
+               <img src="/images/school.png" > 
+            </div>
+        </div>
+    </div>
+    </section>
+@endslot   
+
+@slot('main')
+        
+        <!-- Featured Categories -->
+        <section class="categories">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="/images/category-1.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="/images/category-2.jpg" alt="">
+                    </div>
+                    <div class="col-3">
+                        <img src="/images/category-3a.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products -->
+        <div class="small-container">
+            <h2 class="tittle">Featured Products</h2>
+            <div class="row">
+                <div class="col-4">
+                    <a href="/betta"><img src="/images/product-1.jpg"></a>
+                    <a href="/betta"><h4>Betta Fish</h4></a>
+                    <div class="rating">★★★★★</div>
+                    <p>Rp 45.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-2.jpg">
+                    <h4>Guppy Fish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 15.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-3.jpg">
+                    <h4>Koi Fish</h4>
+                    <div class="rating">★★★★★</div>
+                    <p>Rp 120.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-4.jpg">
+                    <h4>Corydoras Catfish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 22.000</p>
+                </div>
+            </div>
+
+            <h2 class="tittle">Latest Products</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="/images/product-5.jpg">
+                    <h4>Platy Fish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 16.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-6.jpg">
+                    <h4>Angelfish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 50.000</p>
+                </div>
+                <div class="col-4">
+                    <a href="/goldfish"><img src="/images/product-7.jpg"></a>
+                    <a href="/goldfish"><h4>Goldfish</h4></a>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 35.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-8.jpg">
+                    <h4>Molly Fish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 18.000</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="/images/product-9.jpg">
+                    <h4>Tetra Fish</h4>
+                    <div class="rating">★★★★★</div>
+                    <p>Rp 20.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-10.jpg">
+                    <h4>Discus Fish</h4>
+                    <div class="rating">★★★★★</div>
+                    <p>Rp 80.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-11.jpg">
+                    <h4>Oscar Fish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 100.000</p>
+                </div>
+                <div class="col-4">
+                    <img src="/images/product-12.jpg">
+                    <h4>Zebra Danio Fish</h4>
+                    <div class="rating">★★★★☆</div>
+                    <p>Rp 14.000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-------- offer ------->
+        <section class="offer">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="/images/hero.png" alt="Monthly Offer" class="offer-img">
+                    </div>
+                    <div class="col-2">
+                        <p>AquaRim's October Offer</p>
+                        <h1>Golden Beauties</h1>
+                        <small>October is the season of Golden Orange. <br>These elegant swimmers are easy to care for and perfect for aquariums or garden ponds. Available in a stunning range of patterns.<br></small>
+                        <a href="/goldfish" class="btn">Adopt Now &#8594;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------- testimonial ------>
+        <section class="testimonial">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fas fa-quote-left"></i>
+                        <p>AquaRim helped me find the perfect companion for my indoor tank. My goldfish is thriving!</p>
+                        <div class="rating">★★★★☆</div>
+                        <img src="/images/user-1.jpg" alt="user-1">
+                        <h3>Jane Doe</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Super easy process, healthy fish, and the staff gave great care tips. I’ll be back for more!</p>
+                        <div class="rating">★★★★☆</div>
+                        <img src="/images/user-2.jpg" alt="user-1">
+                        <h3>John Parker</h3>
+                    </div>
+                    <div class="col-3">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Beautiful variety and fast delivery. My little pond has never looked more lively!</p>
+                        <div class="rating">★★★★☆</div>
+                        <img src="/images/user-3.jpg" alt="user-1">
+                        <h3>Ann Smith</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-------- footer -------->
+        
+
+        <!----js for toggle-->
+        <script>
+            var menuitems = document.getElementById("menuitems");
+            menuitems.style.maxHeight = "0px";
+            function menutoggle(){
+                if(menuitems.style.maxHeight == "0px")
+                    {menuitems.style.maxHeight = "200px"}
+                else
+                    menuitems.style.maxHeight = "0px"
+            }
+        </script>
+@endslot
+@end

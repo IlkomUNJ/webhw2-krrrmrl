@@ -1,0 +1,83 @@
+@layout.app({title: Cart}) 
+    
+
+@slot('main')
+
+    <!---cart items detail--->
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+
+            @if(rows.length)
+                @each(r in rows)
+                    <tr>
+                    <td>
+                        <div class="cart-info">
+                        <img src="{{ r.product.imageMain }}" alt="{{ r.product.name }}">
+                        <div>
+                            <p>{{ r.product.name }}</p>
+                            <small>Price: Rp {{ r.product.price }}</small><br>
+                            <form action="/cart/remove" method="post" class="inline">
+                            
+                            <input type="hidden" name="id" value="{{ r.item.id }}">
+                            <button type="submit" class="link-like">Remove</button>
+                            </form>
+                        </div>
+                        </div>
+                    </td>
+                    <td>
+                        <form action="/cart/update" method="post">
+                        
+                        <input type="hidden" name="id" value="{{ r.item.id }}">
+                        <input type="number" name="qty" value="{{ r.item.qty }}" min="0">
+                        <button class="btn small">Update</button>
+                        </form>
+                    </td>
+                    <td>Rp {{ r.subtotal }}</td>
+                    </tr>
+                @endeach
+                @else
+                <tr><td colspan="3">Your cart is empty.</td></tr>
+                @endif
+            </table>
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>Rp {{ subtotal }}</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>Rp {{ tax }}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>Rp {{ grand }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    
+
+    <!----js for toggle-->
+    <script>
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+        function menutoggle(){
+            if(menuitems.style.maxHeight == "0px")
+                {menuitems.style.maxHeight = "200px"}
+            else
+                menuitems.style.maxHeight = "0px"
+        }
+    </script>
+
+    
+@endslot
+@end

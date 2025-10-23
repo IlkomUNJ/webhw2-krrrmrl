@@ -1,0 +1,82 @@
+@layout.app({ title: product.name })
+
+@slot('main')
+  <div class="small-container single-product">
+    <div class="row">
+      <div class="col-2">
+        <img src="{{ product.imageMain }}" width="100%" id="productimg">
+
+        <div class="small-img-row">
+          @if(product.imageMain)
+            <div class="small-img-col">
+              <img src="{{ product.imageMain }}" width="100%" class="small-img">
+            </div>
+          @endif
+          @if(product.imageAlt1)
+            <div class="small-img-col">
+              <img src="{{ product.imageAlt1 }}" width="100%" class="small-img">
+            </div>
+          @endif
+          @if(product.imageAlt2)
+            <div class="small-img-col">
+              <img src="{{ product.imageAlt2 }}" width="100%" class="small-img">
+            </div>
+          @endif
+        </div>
+      </div>
+
+      <div class="col-2">
+        <p>Home / {{ product.category }}</p>
+        <h1>{{ product.name }}</h1>
+        <h4>Rp {{ product.price }}</h4>
+
+        <select>
+          <option>Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Random</option>
+        </select>
+        
+        <form action="/cart/add" method="post" class="inline">
+            
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+            <input type="number" name="qty" value="1" min="1" class="qty-input">
+            <button class="btn">Add To Cart</button>
+        </form>
+
+        <h3>Product Details <i class="fas fa-indent"></i></h3>
+        <br>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+
+<!----js for toggle-->
+  <script>
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+        function menutoggle(){
+            if(menuitems.style.maxHeight == "0px")
+                {menuitems.style.maxHeight = "200px"}
+            else
+                menuitems.style.maxHeight = "0px"
+        }
+    </script>
+
+    <!--- js for product gallery --->
+    <script>
+        var productimg = document.getElementById("productimg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function(){
+            productimg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function(){
+            productimg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function(){
+            productimg.src = smallimg[2].src;
+        }
+    </script>
+@endslot
+@end

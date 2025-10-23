@@ -1,0 +1,86 @@
+@layout.app({title: Homepage}) 
+    
+
+@slot('main')
+
+    <!-- Products -->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <form action="/products" method="get">
+                <select name="sort" onchange="this.form.submit()">
+                <option value="name-asc"  selected={{ sort=='name-asc'  }}>Name (A → Z)</option>
+                <option value="name-desc" selected={{ sort=='name-desc' }}>Name (Z → A)</option>
+                <option value="price-asc" selected={{ sort=='price-asc' }}>Price (Low → High)</option>
+                <option value="price-desc"selected={{ sort=='price-desc'}}>Price (High → Low)</option>
+                </select>
+                <noscript><button>Apply</button></noscript>
+            </form>
+        </div>
+
+        <div class="row">
+            @if(products && products.length)
+                @each(product in products)
+                <div class="col-4">
+                    <a href="/products/{{ product.slug }}"><img src="{{ product.imageMain }}" alt="{{ product.name }}"></a>
+                    <a href="/products/{{ product.slug }}"><h4>{{ product.name }}</h4></a>
+                    <div class="rating">★★★★★</div>
+                    <p>Rp {{ product.price }}</p>
+                </div>
+                @endeach
+            @else
+            <p>No products yet. Check back soon!</p>
+            @endif
+            </div>
+
+            
+        <div class="row">
+            <div class="col-4">
+                <img src="/images/product-9.jpg">
+                <h4>Tetra Fish</h4>
+                <div class="rating">★★★★★</div>
+                <p>Rp 20.000</p>
+            </div>
+            <div class="col-4">
+                <img src="/images/product-10.jpg">
+                <h4>Discus Fish</h4>
+                <div class="rating">★★★★★</div>
+                <p>Rp 80.000</p>
+            </div>
+            <div class="col-4">
+                <img src="/images/product-11.jpg">
+                <h4>Oscar Fish</h4>
+                <div class="rating">★★★★☆</div>
+                <p>Rp 100.000</p>
+            </div>
+            <div class="col-4">
+                <img src="/images/product-12.jpg">
+                <h4>Zebra Danio Fish</h4>
+                <div class="rating">★★★★☆</div>
+                <p>Rp 14.000</p>
+            </div>
+        </div>
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
+        </div>
+    </div>
+
+    
+
+    <!----js for toggle-->
+    <script>
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+        function menutoggle(){
+            if(menuitems.style.maxHeight == "0px")
+                {menuitems.style.maxHeight = "200px"}
+            else
+                menuitems.style.maxHeight = "0px"
+        }
+    </script>
+@endslot
+@end

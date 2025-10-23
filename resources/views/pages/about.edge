@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AquaRim</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="header">
+    <div class="container">
+        <div class="navbar" id="navbar">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="AquaRim Logo" width="150px" ></a>
+            </div>
+            <nav>
+                <ul id="menuitems">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    <li><a href="/gate">Account</a></li>
+                </ul>
+            </nav>
+            <a href="/cart"><img src="/images/cart.png" alt="cart" width="30px" height="30px"></a>
+            <img src="/images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-------- about page -------->
+    <section class="about-container">
+    <h1>About AquaRim</h1>
+    <p class="tagline">Where every fish has a story.</p>
+
+    <div class="about-content">
+      <h2>Who We Are</h2>
+      <p>
+        AquaRim is a calming little corner of the internet, built for fish lovers by a fish lover.
+        We believe every fish deserves a beautiful home—and every owner deserves an easy, warm,
+        and joyful experience choosing their perfect aquatic friend.
+      </p>
+
+      <h2>Our Fish</h2>
+      <p>
+        We provide a curated selection of healthy, happy fish—from colorful Bettas to peaceful Guppies—
+        all raised with care. Each product is carefully presented with clarity and love,
+        so you can shop with peace of mind.
+      </p>
+
+      <h2>Why AquaRim?</h2>
+      <p>
+        Because you're not just buying a fish—you're bringing home a little life that glides,
+        shimmers, and calms the soul. AquaRim is built with love, simplicity,
+        and a touch of ocean magic. 🐠✨
+      </p>
+
+      <h2>Meet the Creator</h2>
+      <p>
+        Hi! I'm Rim, a computer science student who loves fish and coding!
+        This website is part of a class project—but it also reflects my personal love
+        for peaceful aquatic creatures. I hope you enjoy it! 💙
+      </p>
+    </div>
+  </section>
+  
+    <!-------- footer -------->
+    <footer>
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Visit Our Store</h3>
+                    <p>Jl. Ikan Hias No.7, Jakarta, Indonesia</p>
+                    <p>Open Daily: 10 AM – 7 PM</p>
+                    <p>Call us: (021) 1234 5678</p>
+                    <p>Come meet your next finned friend in person!</p>
+                </div>
+                <div class="footer-col-2">
+                    <a href="#navbar"><img src="/images/logo.png" alt="AquaRim Logo"></a>
+                    <p>Our Mission Is To Provide the Best Aquatic Experience for Fish Lovers Everywhere.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>About us</li>
+                        <li>Shipment Policy</li>
+                        <li>FAQs</li>
+                        <li>Provacy Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">© 2025 AquaRim. All rights reserved.</p>
+        </div>        
+    </section>
+    </footer>
+    </div>
+    <!----js for toggle-->
+    <script>
+        var menuitems = document.getElementById("menuitems");
+        menuitems.style.maxHeight = "0px";
+        function menutoggle(){
+            if(menuitems.style.maxHeight == "0px")
+                {menuitems.style.maxHeight = "200px"}
+            else
+                menuitems.style.maxHeight = "0px"
+        }
+    </script>
+
+    
+</body>
+</html>
